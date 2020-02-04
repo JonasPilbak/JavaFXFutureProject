@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import static javafx.scene.chart.XYChart.*;
 
-public class barChart extends Application {
+public class Bars extends Application {
     final static String[] name = {"Ram", "Aljoscha", " Jonas", "Kasper", " Casper", " Kasper", "Jakob", "Robert", "Anders", "Rasmuss"};
     final static int[] age = {25, 21, 22, 23, 23, 24, 25, 25, 26, 26};
 
