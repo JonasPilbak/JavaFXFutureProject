@@ -6,25 +6,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<BorderPane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="mainCourse" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="burgers" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="sideDish" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="dippings" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </StackPane>
    </center>
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button fx:id="corsses" mnemonicParsing="false" text="Button" />
+            <Button fx:id="salats" mnemonicParsing="false" text="Button" />
+            <Button fx:id="dishes" mnemonicParsing="false" text="Button" />
+            <Button fx:id="dips" mnemonicParsing="false" text="Button" />
          </children>
       </HBox>
    </bottom>
