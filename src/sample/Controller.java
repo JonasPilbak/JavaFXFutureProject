@@ -20,7 +20,7 @@ public class Controller {
 
 
     @FXML
-    private Button corsses;
+    private Button courses;
 
     @FXML
     private Button salats;
