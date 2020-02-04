@@ -19,8 +19,9 @@ public class Controller {
     private Pane dippings;
 
 
+
     @FXML
-    private Button courses;
+    private Button corsses;
 
     @FXML
     private Button salats;
@@ -30,9 +31,6 @@ public class Controller {
 
     @FXML
     private Button dips;
-
-
-
 
 
 
