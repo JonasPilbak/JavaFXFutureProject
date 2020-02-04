@@ -16,7 +16,7 @@ public class Controller {
     private Pane sideDish;
 
     @FXML
-    private Pane dippings;
+    private Pane desert;
 
 
 
@@ -32,6 +32,18 @@ public class Controller {
     @FXML
     private Button dips;
 
+
+
+    public void goToMainCourse()
+    {
+
+
+            desert.setVisible(false);
+            mainCourse.setVisible(true);
+
+
+
+    }
 
 
 }
