@@ -6,54 +6,46 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import static javafx.scene.chart.XYChart.*;
+
 public class barChart extends Application {
-    String[] name = {"Ram","Aljoscha"," Jonas", "Kasper", }
-
-    @Override public void start(Stage stage) {
-        stage.setTitle("Bar Chart Sample");
-        //Setting X & y axis
-        CategoryAxis x = new CategoryAxis();
-        NumberAxis y = new NumberAxis();
-
-        final BarChart<String,Number> bc =
-                new BarChart<String,Number>(x,y);
-        bc.setTitle("Country Summary");
-        x.setLabel("Country");
-        y.setLabel("Value");
-
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("2003");
-        series1.getData().add(new XYChart.Data(austria, 25601.34));
-        series1.getData().add(new XYChart.Data(brazil, 20148.82));
-        series1.getData().add(new XYChart.Data(france, 10000));
-        series1.getData().add(new XYChart.Data(italy, 35407.15));
-        series1.getData().add(new XYChart.Data(usa, 12000));
-
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName("2004");
-        series2.getData().add(new XYChart.Data(austria, 57401.85));
-        series2.getData().add(new XYChart.Data(brazil, 41941.19));
-        series2.getData().add(new XYChart.Data(france, 45263.37));
-        series2.getData().add(new XYChart.Data(italy, 117320.16));
-        series2.getData().add(new XYChart.Data(usa, 14845.27));
-
-        XYChart.Series series3 = new XYChart.Series();
-        series3.setName("2005");
-        series3.getData().add(new XYChart.Data(austria, 45000.65));
-        series3.getData().add(new XYChart.Data(brazil, 44835.76));
-        series3.getData().add(new XYChart.Data(france, 18722.18));
-        series3.getData().add(new XYChart.Data(italy, 17557.31));
-        series3.getData().add(new XYChart.Data(usa, 92633.68));
-
-        Scene scene  = new Scene(bc,800,600);
-        bc.getData().addAll(series1, series2, series3);
-        stage.setScene(scene);
-        stage.show();
-    }
+    final static String[] name = {"Ram", "Aljoscha", " Jonas", "Kasper", " Casper", " Kasper", "Jakob", "Robert", "Anders", "Rasmuss"};
+    final static int[] age = {25, 21, 22, 23, 23, 24, 25, 25, 26, 26};
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle("Bar Chart Sample");
+        //Setting X & y axis
+        final CategoryAxis x = new CategoryAxis();
+        final NumberAxis y = new NumberAxis();
+
+        final BarChart<String, Number> bc = new BarChart<>(x, y);
+        bc.setTitle("Class age");
+        x.setLabel("Names");
+        y.setLabel("Ages");
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("Age");
+
+        for (int i = 0; i < 10; i++) {
+            series1.getData().add(new XYChart.Data(name[i], age[i]));
+
+        }
+
+        Scene scene = new Scene(bc, 800, 600);
+
+
+            bc.getData(). add(series1);
+
+        stage.setScene(scene);
+        stage.show();
     }
 }
