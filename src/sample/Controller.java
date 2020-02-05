@@ -3,12 +3,12 @@ package sample;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
@@ -104,10 +104,16 @@ public class Controller {
     @FXML
     private Button goToDesserts;
 
+    int valueSpareRibs = 169;
+    int valueMediumRibs;
+    int valueLargeRibs;
+    int valueChicken;
+    int valueRoute66;
+    int totalInPrice;
     @FXML
     private TextField totalPrice;
 
-    ArrayList<String> prices = new ArrayList<>();
+    ArrayList<Integer> prices = new ArrayList<>();
 
     @FXML
     void change(MouseEvent event) {
@@ -169,31 +175,99 @@ public class Controller {
     @FXML
     void price(ActionEvent event) {
 
+
+
+
+        ToggleGroup group = new ToggleGroup();
+
+        spareRibs.setToggleGroup(group);
+        origSparePlus20.setToggleGroup(group);
+        plus40.setToggleGroup(group);
+        route66.setToggleGroup(group);
+        amiRibsAndChickenBreast.setToggleGroup(group);
+/*
         if (spareRibs.isFocused()) {
-            prices.add("169");
+            int rib = 169;
+            totalPrice.setText("" + rib);
+
+
+
+        } else if (origSparePlus20.isFocused())
+        {
+
         }
+
+
+ */
+
+     group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+         @Override
+         public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+             //RadioButton rb = (RadioButton)group.getSelectedToggle();
+           //  System.out.println(newValue);
+             if (newValue == spareRibs)
+             {
+                 valueSpareRibs = 169;
+                 totalPrice.setText("" + valueSpareRibs);
+             }
+             else if (newValue == origSparePlus20)
+             {
+                 valueMediumRibs = 189;
+                 totalPrice.setText("" + valueMediumRibs);
+             }
+            else if (newValue == plus40)
+            {
+                valueLargeRibs = 209;
+                totalPrice.setText("" + valueLargeRibs);
+            }
+             else if (newValue == amiRibsAndChickenBreast)
+             {
+                 valueChicken = 185;
+                 totalPrice.setText("" + valueChicken);
+             }
+             else if (newValue == route66)
+             {
+                 valueRoute66 = 255;
+                 totalPrice.setText("" + valueRoute66);
+             }
+
+         }
+     });
+
+
+
+
+/*
         if(ChooseSoftIce.isFocused()){
-            prices.add("49");
+            prices.add(49);
         }
         if(chilliDip.isFocused()){
-            prices.add("6");
+            prices.add(6);
         }
         if(chipotleMayo.isFocused()){
-            prices.add("6");
+            prices.add(6);
         }
         if(smokeyBBQ.isFocused()){
-            prices.add("6");
+            prices.add(6);
         }
         if(aioli.isFocused()){
-            prices.add("6");
+            prices.add(6);
         }
+        /*
+        if (origSparePlus20.isFocused())
+        {
+            prices.add(20);
+        }
+
+
         if(CrispyPotatoButtonPlus10.isFocused())
         {
-            prices.add("10");
+            prices.add(10);
+            totalPrice.setText("" + prices.get(1));
         }
+  */
 
-
-        int totalInPrice = 0;
+        /*
         int price = 0;
         for (int i = 0; i <prices.size()-1 ; i++) {
              String test2 = prices.get(i);
@@ -206,6 +280,8 @@ public class Controller {
         String newtotalPrice = Integer.toString(price);
         totalPrice.setText(newtotalPrice);
 
+
+         */
     }
 
 
