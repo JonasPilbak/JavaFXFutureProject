@@ -146,9 +146,30 @@ public class Controller {
     void price(ActionEvent event) {
         if (spareRibs.isFocused()) {
             prices.add("169");
-            totalPrice.setText(prices.get(0));
+
+        }
+        if(ChooseSoftIce.isFocused()){
+            prices.add("49");
         }
 
+        int totalInPrice = 0;
+        int price = 0;
+        for (int i = 0; i <prices.size() ; i++) {
+             String test2 = prices.get(i);
+             price = Integer.parseInt(test2.trim());
+             price = price+price;
+
+
+        }
+
+        String newtotalPrice = Integer.toString(price);
+        totalPrice.setText(newtotalPrice);
 
     }
+
+
+
+
+
 }
+
