@@ -63,7 +63,6 @@
             </Pane>
             <Pane fx:id="potatoPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a5691a;">
                <children>
-                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
                   <Text layoutX="179.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: red;" text="Choose sauce, DIP &amp; potato">
                      <font>
                         <Font size="28.0" />
@@ -90,7 +89,7 @@
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <TabPane layoutX="-2.0" layoutY="91.0" prefHeight="208.0" prefWidth="700.0" stylesheets="@../CSS%20Collection/tabPanes.css" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="-2.0" layoutY="91.0" prefHeight="208.0" prefWidth="707.0" stylesheets="@../CSS%20Collection/tabPanes.css" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Sauce">
                         <content>
