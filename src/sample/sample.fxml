@@ -15,10 +15,24 @@
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="desert" prefHeight="200.0" prefWidth="200.0" visible="false" />
+            <Pane fx:id="desert" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37021;">
+               <children>
+                  <Label text="Hey there Hungry, in for some sweet? Pick and eat all you can " textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="118.0" text="Softice with delicious toppings, caramel and chocolate sauce" textFill="WHITE" />
+                  <Label layoutX="10.0" layoutY="88.0" prefHeight="30.0" prefWidth="690.0" text="All you can eat’ softice buffet............................................................................49,-" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="softIce" layoutX="634.0" layoutY="95.0" mnemonicParsing="false" />
+               </children></Pane>
             <Pane fx:id="burgers" prefHeight="200.0" prefWidth="200.0" visible="false" />
             <Pane fx:id="sideDish" prefHeight="200.0" prefWidth="200.0" visible="false" />
-            <Pane fx:id="mainCourse" prefHeight="200.0" prefWidth="200.0">
+            <Pane fx:id="mainCourse" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
                   <Label layoutX="3.0" layoutY="136.0" text="The Original American Spareribs  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  169,-" />
                   <RadioButton fx:id="spareRibs" layoutX="404.0" layoutY="136.0" mnemonicParsing="false" onAction="#price" />
