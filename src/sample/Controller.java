@@ -66,6 +66,30 @@ public class Controller {
     private RadioButton bakedPotatoWSourGarlicButter;
 
     @FXML
+    private RadioButton origSparePlus20;
+
+    @FXML
+    private RadioButton plus40;
+
+    @FXML
+    private RadioButton amiRibsAndChickenBreast;
+
+    @FXML
+    private RadioButton route66;
+
+    @FXML
+    private RadioButton chilliDip;
+
+    @FXML
+    private RadioButton smokeyBBQ;
+
+    @FXML
+    private RadioButton aioli;
+
+    @FXML
+    private RadioButton chipotleMayo;
+
+    @FXML
     private Button goToMainCoursesPane;
 
     @FXML
@@ -144,17 +168,34 @@ public class Controller {
 
     @FXML
     void price(ActionEvent event) {
+
         if (spareRibs.isFocused()) {
             prices.add("169");
-
         }
         if(ChooseSoftIce.isFocused()){
             prices.add("49");
         }
+        if(chilliDip.isFocused()){
+            prices.add("6");
+        }
+        if(chipotleMayo.isFocused()){
+            prices.add("6");
+        }
+        if(smokeyBBQ.isFocused()){
+            prices.add("6");
+        }
+        if(aioli.isFocused()){
+            prices.add("6");
+        }
+        if(CrispyPotatoButtonPlus10.isFocused())
+        {
+            prices.add("10");
+        }
+
 
         int totalInPrice = 0;
         int price = 0;
-        for (int i = 0; i <prices.size() ; i++) {
+        for (int i = 0; i <prices.size()-1 ; i++) {
              String test2 = prices.get(i);
              price = Integer.parseInt(test2.trim());
              price = price+price;
