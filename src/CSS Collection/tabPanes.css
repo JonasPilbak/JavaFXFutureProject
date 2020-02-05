@@ -22,12 +22,12 @@
 
 }
 .tab-pane .tab{
-    -fx-pref-width: 200git.0;
+    -fx-pref-width: 200.0;
 }
 .tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
     -fx-alignment: CENTER;
     -fx-pref-width: 200.0;
-    -fx-text-fill: -fx-text-base-color;
+    -fx-text-fill: #git2095F3;
 }
 
 .tab-pane > .tab-header-area > .headers-region > .tab:selected {

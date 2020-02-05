@@ -1,0 +1,33 @@
+.button
+{
+    color: rgb(255, 255, 255); font-size: 10px; line-height: 10px; padding: 0px;
+    border-radius: 50px; text-decoration: none; font-style: normal; font-variant: normal;
+    text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 35%,
+    rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+    -fx-background-color: transparent, #99CCFF;
+}
+.button:hover
+{
+    background: #1C6EA4;
+    -moz-transform: scale(0.7) translate(11px, 0px) skew(0deg, -26deg);
+
+}
+
+.button:active {
+    background: #144E75;
+
+
+}
+.text-field{
+    height: 20px;
+    position: relative;
+    border: 2px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .14);
+    background-color: AliceBlue;
+    font-size: 14px;
+}
+#totalPrice > input:disabled{
+    -fx-background-color: transparent;
+    -fx-cursor: not-allowed;
+}
