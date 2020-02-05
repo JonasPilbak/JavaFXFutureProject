@@ -1,5 +1,9 @@
 package sample;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,12 +12,25 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-import java.util.ArrayList;
-
 public class Controller {
 
     @FXML
-    private Pane mainCourse;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private Pane potatoPane;
+
+    @FXML
+    private Pane dessertPane;
+
+    @FXML
+    private Label allYouCanEatSoftLabel;
+
+    @FXML
+    private RadioButton ChooseSoftIce;
 
     @FXML
     private Pane burgers;
@@ -22,79 +39,116 @@ public class Controller {
     private Pane sideDish;
 
     @FXML
-    private Pane desert;
+    private Pane mainCourse;
 
+    @FXML
+    private RadioButton spareRibs;
 
+    @FXML
+    private RadioButton SpareRibsSauceButton;
 
+    @FXML
+    private RadioButton whiskySauceButton;
+
+    @FXML
+    private RadioButton BearSauceButton;
+
+    @FXML
+    private RadioButton CrispyPotatoButtonPlus10;
+
+    @FXML
+    private RadioButton bakedPotatoWSourCream;
+
+    @FXML
+    private RadioButton bakedPotatoWSourButter;
+
+    @FXML
+    private RadioButton bakedPotatoWSourGarlicButter;
+
+    @FXML
+    private Button goToMainCoursesPane;
+
+    @FXML
+    private Button goToBurgerPane;
+
+    @FXML
+    private Button goToDishes;
+
+    @FXML
+    private Button goToPotatoPane;
+
+    @FXML
+    private Button goToDesserts;
 
     @FXML
     private TextField totalPrice;
 
-    @FXML
-    private RadioButton spareRibs;
-    @FXML
-    private Button courses;
-
-    @FXML
-    private Button salats;
-
-    @FXML
-    private Button dishes;
-
-    @FXML
-    private Button dips;
-
     ArrayList<String> prices = new ArrayList<>();
 
+    @FXML
+    void change(MouseEvent event) {
 
-    public void goToDesert()
-    {
+    }
 
+    @FXML
+    void changeBack(MouseEvent event) {
 
-            sideDish.setVisible(false);
-            burgers.setVisible(false);
-            mainCourse.setVisible(false);
-            desert.setVisible(true);
+    }
+
+    @FXML
+    void chooseAllYouCanEatIce(ActionEvent event) {
 
 
     }
-    public void goToBurger()
-    {
+
+    @FXML
+    void goToBurger(ActionEvent event) {
+
         mainCourse.setVisible(false);
-        desert.setVisible(false);
+        dessertPane.setVisible(false);
         sideDish.setVisible(false);
         burgers.setVisible(true);
+        potatoPane.setVisible(false);
     }
 
-    public void goToMain()
-    {
-        mainCourse.setVisible(true);
-        desert.setVisible(false);
+    @FXML
+    void goToDesert(ActionEvent event) {
         sideDish.setVisible(false);
         burgers.setVisible(false);
+        mainCourse.setVisible(false);
+        dessertPane.setVisible(true);
+        potatoPane.setVisible(false);
+
     }
 
+    @FXML
+    void goToMain(ActionEvent event) {
 
-    public void change()
-    {
-    courses.setStyle("-fx-background-color: red");
+        mainCourse.setVisible(true);
+        dessertPane.setVisible(false);
+        sideDish.setVisible(false);
+        burgers.setVisible(false);
+        potatoPane.setVisible(false);
     }
-    public void changeBack()
-    {
-        courses.setStyle("-fx-background-color: grey");
+
+    @FXML
+    void potatoPane(ActionEvent event) {
+
+        potatoPane.setVisible(true);
+        burgers.setVisible(false);
+        sideDish.setVisible(false);
+        dessertPane.setVisible(false);
+        mainCourse.setVisible(false);
+
     }
 
+    @FXML
+    void price(ActionEvent event) {
+        if (spareRibs.isFocused()) {
+            prices.add("169");
+            totalPrice.setText(prices.get(0));
+        }
 
 
-    public void price()
-    {
-
-       if (spareRibs.isFocused())
-       {
-         prices.add("169");
-         totalPrice.setText(prices.get(0));
-
-
-       }
     }
 }

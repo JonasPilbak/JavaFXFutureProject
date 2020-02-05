@@ -21,20 +21,26 @@
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Pane fx:id="potatoPane" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="desert" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37021;" visible="false">
+            <Pane fx:id="dessertPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37021;" stylesheets="@../CSS%20Collection/paneDessert.css">
                <children>
                   <Label text="Hey there Hungry, in for some sweet? Pick and eat all you can " textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="118.0" text="Softice with delicious toppings, caramel and chocolate sauce" textFill="WHITE" />
-                  <Label layoutX="10.0" layoutY="88.0" prefHeight="30.0" prefWidth="690.0" text="All you can eat’ softice buffet............................................................................49,-" textFill="WHITE">
+                  <Label layoutX="110.0" layoutY="367.0" text="Softice with delicious toppings, caramel and chocolate sauce" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="allYouCanEatSoftLabel" layoutX="195.0" layoutY="337.0" prefHeight="30.0" prefWidth="271.0" text="All you can eat’ softice buffet" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="softIce" layoutX="634.0" layoutY="95.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="ChooseSoftIce" layoutX="507.0" layoutY="337.0" mnemonicParsing="false" onAction="#chooseAllYouCanEatIce" text="49,-" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font></RadioButton>
                </children></Pane>
             <Pane fx:id="burgers" prefHeight="200.0" prefWidth="200.0" visible="false" />
             <Pane fx:id="sideDish" prefHeight="200.0" prefWidth="200.0" visible="false" />
@@ -61,7 +67,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="potatoPane" prefHeight="400.0" prefWidth="681.0" style="-fx-background-color: #a5691a;">
+            <Pane fx:id="potatoPane" prefHeight="400.0" prefWidth="681.0" style="-fx-background-color: #d6a755;" visible="false">
                <children>
                   <Text layoutX="179.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: red;" text="Choose sauce, DIP &amp; potato">
                      <font>
@@ -70,7 +76,7 @@
                      <fill>
                         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
                            <stops>
-                              <Stop color="#64d741" />
+                              <Stop color="#3ba5a7" />
                               <Stop color="WHITE" offset="1.0" />
                            </stops>
                         </LinearGradient>
@@ -84,12 +90,12 @@
                         <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
                            <stops>
                               <Stop color="WHITE" />
-                              <Stop color="#64d741" offset="1.0" />
+                              <Stop color="#3ba5a7" offset="1.0" />
                            </stops>
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <TabPane layoutX="5.0" layoutY="91.0" prefHeight="208.0" prefWidth="690.0" stylesheets="@../CSS%20Collection/tabPanes.css" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="5.0" layoutY="95.0" prefHeight="239.0" prefWidth="690.0" stylesheets="@../CSS%20Collection/tabPanes.css" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Sauce">
                         <content>
@@ -134,7 +140,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <RadioButton layoutX="139.0" layoutY="148.0" mnemonicParsing="false" />
+                                    <RadioButton layoutX="160.0" layoutY="148.0" mnemonicParsing="false" text="+6,-" />
                                     <RadioButton layoutX="160.0" layoutY="125.0" mnemonicParsing="false" text="+6,-" />
                                     <RadioButton layoutX="160.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="52.0" text="+6,-" />
                                     <Label layoutX="15.0" layoutY="96.0" text="Smoeky BBQ">
@@ -147,7 +153,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="15.0" layoutY="148.0" text="Chip/ChilliMayo..... +6" />
+                                    <Label layoutX="15.0" layoutY="148.0" text="Chip/ChilliMayo" />
                                     <RadioButton layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="+6,-" />
                                     <RadioButton layoutX="160.0" layoutY="49.0" mnemonicParsing="false" />
                                     <RadioButton layoutX="160.0" layoutY="25.0" mnemonicParsing="false" />
@@ -195,12 +201,12 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@../CSS%20Collection/buttons.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="courses" mnemonicParsing="false" onAction="#goToMain" onMouseEntered="#change" onMouseExited="#changeBack" text="MainCurses" />
-            <Button fx:id="salats" mnemonicParsing="false" onAction="#goToBurger" text="Burgers" />
-            <Button fx:id="dishes" mnemonicParsing="false" text="Dishes" />
-            <Button fx:id="PotatoPaneChooserButton" mnemonicParsing="false" text="Potato" />
-            <Button fx:id="DessertChooserButton" mnemonicParsing="false" onAction="#goToDesert" text="Desserts" />
-            <TextField fx:id="totalPrice" promptText="Total" />
+            <Button fx:id="goToMainCoursesPane" mnemonicParsing="false" onAction="#goToMain" onMouseEntered="#change" onMouseExited="#changeBack" text="Main course" />
+            <Button fx:id="goToBurgerPane" mnemonicParsing="false" onAction="#goToBurger" text="Burgers" />
+            <Button fx:id="goToDishes" mnemonicParsing="false" text="Dishes" />
+            <Button fx:id="goToPotatoPane" mnemonicParsing="false" onAction="#potatoPane" text="Potato" />
+            <Button fx:id="goToDesserts" mnemonicParsing="false" onAction="#goToDesert" text="Desserts" />
+            <TextField fx:id="totalPrice" promptText="Total to Pay" />
          </children>
       </HBox>
    </bottom>
