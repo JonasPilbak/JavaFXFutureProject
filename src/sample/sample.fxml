@@ -104,9 +104,9 @@
                                     <Label layoutX="30.0" layoutY="51.0" text="Bone's Bearnaisesauce" />
                                     <Label layoutX="36.0" layoutY="81.0" text="Bone's Whiskysauce" />
                                     <Label layoutX="36.0" layoutY="115.0" text="Bone's Spareribssauce" />
-                                    <RadioButton layoutX="207.0" layoutY="115.0" mnemonicParsing="false" text="SpareSauce" />
-                                    <RadioButton layoutX="217.0" layoutY="81.0" mnemonicParsing="false" text="WhiskySauce" />
-                                    <RadioButton layoutX="224.0" layoutY="51.0" mnemonicParsing="false" text="BearSauce" />
+                                    <RadioButton fx:id="SpareRibsSauceButton" layoutX="207.0" layoutY="115.0" mnemonicParsing="false" text="SpareSauce" />
+                                    <RadioButton fx:id="whiskySauceButton" layoutX="217.0" layoutY="81.0" mnemonicParsing="false" text="WhiskySauce" />
+                                    <RadioButton fx:id="BearSauceButton" layoutX="224.0" layoutY="51.0" mnemonicParsing="false" text="BearSauce" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -150,8 +150,8 @@
             <Button fx:id="courses" mnemonicParsing="false" onAction="#goToMain" onMouseEntered="#change" onMouseExited="#changeBack" text="MainCurses" />
             <Button fx:id="salats" mnemonicParsing="false" onAction="#goToBurger" text="Burgers" />
             <Button fx:id="dishes" mnemonicParsing="false" text="Dishes" />
-            <Button mnemonicParsing="false" text="Potato" />
-            <Button fx:id="dips" mnemonicParsing="false" onAction="#goToDesert" text="Desserts" />
+            <Button fx:id="PotatoPaneChooserButton" mnemonicParsing="false" text="Potato" />
+            <Button fx:id="DessertChooserButton" mnemonicParsing="false" onAction="#goToDesert" text="Desserts" />
             <TextField fx:id="totalPrice" />
          </children>
       </HBox>
