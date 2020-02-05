@@ -25,7 +25,7 @@
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Pane fx:id="potatoPane" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="dessertPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37021;" stylesheets="@../CSS%20Collection/paneDessert.css">
+            <Pane fx:id="dessertPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f37021;" stylesheets="@../CSS%20Collection/paneDessert.css" visible="false">
                <children>
                   <Label text="Hey there Hungry, in for some sweet? Pick and eat all you can " textFill="WHITE">
                      <font>
@@ -54,16 +54,16 @@
                   <RadioButton fx:id="spareRibs" layoutX="404.0" layoutY="136.0" mnemonicParsing="false" onAction="#price" />
                   <Label layoutX="425.0" layoutY="136.0" text=".......+20,- " />
                   <Label layoutX="496.0" layoutY="136.0" text=".......+40,-" />
-                  <RadioButton layoutX="475.0" layoutY="136.0" mnemonicParsing="false" />
-                  <RadioButton layoutX="547.0" layoutY="136.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="origSparePlus20" layoutX="475.0" layoutY="136.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="plus40" layoutX="547.0" layoutY="136.0" mnemonicParsing="false" />
                   <Label layoutX="3.0" layoutY="159.0" text="Baby Back Ribs with Sam Bone’s original BBQ." />
                   <Label layoutX="5.0" layoutY="185.0" text="The Original American Spareribs &amp; BBQ Chicken Breast . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 185,-" />
                   <Label layoutX="3.0" layoutY="235.0" text="Route 66...................................................................................................................................................................................... 255,- " />
                   <Label layoutX="6.0" layoutY="209.0" text="With Sam Bone’s original BBQ." />
-                  <RadioButton layoutX="558.0" layoutY="185.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="amiRibsAndChickenBreast" layoutX="558.0" layoutY="185.0" mnemonicParsing="false" />
                   <Label layoutX="6.0" layoutY="288.0" text="beef tenderloin, The Original American Spareribs, BBQ Chicken Breast and onion rings." />
                   <Label layoutY="262.0" text="Take a trip through the United States and taste more of our specialties: Kebabs with" />
-                  <RadioButton layoutX="558.0" layoutY="235.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="route66" layoutX="558.0" layoutY="235.0" mnemonicParsing="false" />
                   <Text layoutX="225.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: red;" text="Choose main course">
                      <font>
                         <Font size="28.0" />
@@ -71,7 +71,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="potatoPane" prefHeight="400.0" prefWidth="681.0" style="-fx-background-color: #d6a755;" visible="false">
+            <Pane fx:id="potatoPane" prefHeight="400.0" prefWidth="681.0" style="-fx-background-color: #d6a755;">
                <children>
                   <Text layoutX="179.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: red;" text="Choose sauce, DIP &amp; potato">
                      <font>
@@ -144,9 +144,9 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <RadioButton layoutX="160.0" layoutY="148.0" mnemonicParsing="false" text="+6,-" />
-                                    <RadioButton layoutX="160.0" layoutY="125.0" mnemonicParsing="false" text="+6,-" />
-                                    <RadioButton layoutX="160.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="52.0" text="+6,-" />
+                                    <RadioButton fx:id="chipotleMayo" layoutX="160.0" layoutY="148.0" mnemonicParsing="false" text="+6,-" />
+                                    <RadioButton fx:id="aioli" layoutX="160.0" layoutY="125.0" mnemonicParsing="false" text="+6,-" />
+                                    <RadioButton fx:id="smokeyBBQ" layoutX="160.0" layoutY="98.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="52.0" text="+6,-" />
                                     <Label layoutX="15.0" layoutY="96.0" text="Smoeky BBQ">
                                        <font>
                                           <Font size="14.0" />
@@ -158,7 +158,7 @@
                                        </font>
                                     </Label>
                                     <Label layoutX="15.0" layoutY="148.0" text="Chip/ChilliMayo" />
-                                    <RadioButton layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="+6,-" />
+                                    <RadioButton fx:id="chilliDip" layoutX="160.0" layoutY="75.0" mnemonicParsing="false" text="+6,-" />
                                     <RadioButton layoutX="160.0" layoutY="49.0" mnemonicParsing="false" />
                                     <RadioButton layoutX="160.0" layoutY="25.0" mnemonicParsing="false" />
                                  </children>
@@ -210,7 +210,7 @@
             <Button fx:id="goToDishes" mnemonicParsing="false" text="Dishes" />
             <Button fx:id="goToPotatoPane" mnemonicParsing="false" onAction="#potatoPane" text="Potato" />
             <Button fx:id="goToDesserts" mnemonicParsing="false" onAction="#goToDesert" text="Desserts" />
-            <TextField fx:id="totalPrice" promptText="Total to Pay" />
+            <TextField fx:id="totalPrice" onAction="#price" promptText="Total to Pay" />
          </children>
       </HBox>
    </bottom>
