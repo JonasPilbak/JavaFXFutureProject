@@ -176,6 +176,7 @@ public class Controller {
                 prices.add(0);
                 if (newValue == spareRibs) {
                     prices.add(169);
+
                 }  if (newValue == origSparePlus20) {
                     prices.add(189);
 
@@ -220,6 +221,7 @@ public class Controller {
                     price = prices.get(i) + price;
                 }
                 totalPrice.setText("" + price);
+                System.out.println(price);
 
             }
         });
