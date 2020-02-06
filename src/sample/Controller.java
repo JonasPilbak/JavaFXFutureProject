@@ -14,6 +14,8 @@ import javafx.scene.layout.Pane;
 
 public class Controller {
 
+
+    //region Variables
     @FXML
     private ResourceBundle resources;
 
@@ -103,6 +105,8 @@ public class Controller {
 
     @FXML
     private Button goToDesserts;
+    //endregion
+
 
     int valueSpareRibs = 169;
     int valueMediumRibs;
@@ -110,30 +114,33 @@ public class Controller {
     int valueChicken;
     int valueRoute66;
     int totalInPrice;
+
     @FXML
     private TextField totalPrice;
-
     ArrayList<Integer> prices = new ArrayList<>();
 
     @FXML
     void change(MouseEvent event) {
-
     }
 
     @FXML
-    void changeBack(MouseEvent event) {
-
+    void changeBack() {
     }
 
     @FXML
     void chooseAllYouCanEatIce(ActionEvent event) {
-
-
     }
 
+
+//panes
+
+    /**
+     * TestCustomFolding
+     *
+     * @param event
+     */
     @FXML
     void goToBurger(ActionEvent event) {
-
         mainCourse.setVisible(false);
         dessertPane.setVisible(false);
         sideDish.setVisible(false);
@@ -148,12 +155,10 @@ public class Controller {
         mainCourse.setVisible(false);
         dessertPane.setVisible(true);
         potatoPane.setVisible(false);
-
     }
 
     @FXML
     void goToMain(ActionEvent event) {
-
         mainCourse.setVisible(true);
         dessertPane.setVisible(false);
         sideDish.setVisible(false);
@@ -163,76 +168,53 @@ public class Controller {
 
     @FXML
     void potatoPane(ActionEvent event) {
-
         potatoPane.setVisible(true);
         burgers.setVisible(false);
         sideDish.setVisible(false);
         dessertPane.setVisible(false);
         mainCourse.setVisible(false);
-
     }
 
     @FXML
     void price(ActionEvent event) {
-
-
-
-
         ToggleGroup group = new ToggleGroup();
-
         spareRibs.setToggleGroup(group);
         origSparePlus20.setToggleGroup(group);
         plus40.setToggleGroup(group);
         route66.setToggleGroup(group);
         amiRibsAndChickenBreast.setToggleGroup(group);
-/*
-        if (spareRibs.isFocused()) {
-            int rib = 169;
-            totalPrice.setText("" + rib);
 
 
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+                //RadioButton rb = (RadioButton)group.getSelectedToggle();
+                //  System.out.println(newValue);
+                if (newValue == spareRibs) {
+                    prices.add(169);
+                } else if (newValue == origSparePlus20) {
+                    prices.add(189);
+                    System.out.println("debug origSpare20+");
+                } else if (newValue == plus40) {
+                    prices.add(209);
+                    totalPrice.setText("Debug plus40");
+                } else if (newValue == amiRibsAndChickenBreast) {
+                    prices.add(185);
+                    totalPrice.setText("debug chickenBreat");
+                } else if (newValue == route66) {
+                    prices.add(205);
+                    totalPrice.setText("debug route 66");
+                }
+                int price = 0;
+                for (int i = 0; i <prices.size()-1 ; i++) {
 
-        } else if (origSparePlus20.isFocused())
-        {
 
-        }
+                    price = prices.get(i)+price;
+                }
+                totalPrice.setText(""+price);
 
-
- */
-
-     group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-         @Override
-         public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-             //RadioButton rb = (RadioButton)group.getSelectedToggle();
-           //  System.out.println(newValue);
-             if (newValue == spareRibs)
-             {
-                 valueSpareRibs = 169;
-                 totalPrice.setText("" + valueSpareRibs);
-             }
-             else if (newValue == origSparePlus20)
-             {
-                 valueMediumRibs = 189;
-                 totalPrice.setText("" + valueMediumRibs);
-             }
-            else if (newValue == plus40)
-            {
-                valueLargeRibs = 209;
-                totalPrice.setText("" + valueLargeRibs);
             }
-             else if (newValue == amiRibsAndChickenBreast)
-             {
-                 valueChicken = 185;
-                 totalPrice.setText("" + valueChicken);
-             }
-             else if (newValue == route66)
-             {
-                 valueRoute66 = 255;
-                 totalPrice.setText("" + valueRoute66);
-             }
-
-         }
-     });
+        });
 
 
 
@@ -258,8 +240,6 @@ public class Controller {
         {
             prices.add(20);
         }
-
-
         if(CrispyPotatoButtonPlus10.isFocused())
         {
             prices.add(10);
@@ -267,26 +247,13 @@ public class Controller {
         }
   */
 
-        /*
-        int price = 0;
-        for (int i = 0; i <prices.size()-1 ; i++) {
-             String test2 = prices.get(i);
-             price = Integer.parseInt(test2.trim());
-             price = price+price;
 
-
-        }
-
-        String newtotalPrice = Integer.toString(price);
-        totalPrice.setText(newtotalPrice);
-
-
-         */
     }
-
-
-
-
-
 }
+
+
+
+
+
+
 
