@@ -1,9 +1,5 @@
 package sample;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -12,100 +8,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 public class Controller {
-
-
-    //region Variables
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Pane potatoPane;
-
-    @FXML
-    private Pane dessertPane;
-
-    @FXML
-    private Label allYouCanEatSoftLabel;
-
-    @FXML
-    private RadioButton ChooseSoftIce;
-
-    @FXML
-    private Pane burgers;
-
-    @FXML
-    private Pane sideDish;
-
-    @FXML
-    private Pane mainCourse;
-
-    @FXML
-    private RadioButton spareRibs;
-
-    @FXML
-    private RadioButton SpareRibsSauceButton;
-
-    @FXML
-    private RadioButton whiskySauceButton;
-
-    @FXML
-    private RadioButton BearSauceButton;
-
-    @FXML
-    private RadioButton CrispyPotatoButtonPlus10;
-
-    @FXML
-    private RadioButton bakedPotatoWSourCream;
-
-    @FXML
-    private RadioButton bakedPotatoWSourButter;
-
-    @FXML
-    private RadioButton bakedPotatoWSourGarlicButter;
-
-    @FXML
-    private RadioButton origSparePlus20;
-
-    @FXML
-    private RadioButton plus40;
-
-    @FXML
-    private RadioButton amiRibsAndChickenBreast;
-
-    @FXML
-    private RadioButton route66;
-
-    @FXML
-    private RadioButton chilliDip;
-
-    @FXML
-    private RadioButton smokeyBBQ;
-
-    @FXML
-    private RadioButton aioli;
-
-    @FXML
-    private RadioButton chipotleMayo;
-
-    @FXML
-    private Button goToMainCoursesPane;
-
-    @FXML
-    private Button goToBurgerPane;
-
-    @FXML
-    private Button goToDishes;
-
-    @FXML
-    private Button goToPotatoPane;
-
-    @FXML
-    private Button goToDesserts;
-    //endregion
 
 
     int valueSpareRibs = 169;
@@ -114,10 +21,73 @@ public class Controller {
     int valueChicken;
     int valueRoute66;
     int totalInPrice;
-
+    ArrayList<Integer> prices = new ArrayList<>();
+    //region Variables
+    @FXML
+    private ResourceBundle resources;
+    @FXML
+    private URL location;
+    @FXML
+    private Pane potatoPane;
+    @FXML
+    private Pane dessertPane;
+    @FXML
+    private Label allYouCanEatSoftLabel;
+    @FXML
+    private Pane burgers;
+    @FXML
+    private Pane sideDish;
+    @FXML
+    private Pane mainCourse;
+    @FXML
+    private RadioButton spareRibs;
+    @FXML
+    private RadioButton SpareRibsSauceButton;
+    @FXML
+    private RadioButton whiskySauceButton;
+    @FXML
+    private RadioButton BearSauceButton;
+    @FXML
+    private RadioButton CrispyPotatoButtonPlus10;
+    @FXML
+    private RadioButton bakedPotatoWSourCream;
+    @FXML
+    private RadioButton bakedPotatoWSourButter;
+    @FXML
+    private RadioButton bakedPotatoWSourGarlicButter;
+    @FXML
+    private RadioButton origSparePlus20;
+    @FXML
+    private RadioButton plus40;
+    @FXML
+    private RadioButton amiRibsAndChickenBreast;
+    @FXML
+    private RadioButton route66;
+    @FXML
+    private RadioButton chilliDip;
+    @FXML
+    private RadioButton smokeyBBQ;
+    //endregion
+    @FXML
+    private RadioButton aioli;
+    @FXML
+    private RadioButton chipotleMayo;
+    @FXML
+    private RadioButton ChooseSoftIce;
+    @FXML
+    private RadioButton showTotal;
+    @FXML
+    private Button goToMainCoursesPane;
+    @FXML
+    private Button goToBurgerPane;
+    @FXML
+    private Button goToDishes;
+    @FXML
+    private Button goToPotatoPane;
+    @FXML
+    private Button goToDesserts;
     @FXML
     private TextField totalPrice;
-    ArrayList<Integer> prices = new ArrayList<>();
 
     @FXML
     void change(MouseEvent event) {
@@ -132,7 +102,7 @@ public class Controller {
     }
 
 
-//panes
+//panes and toogle Group
 
     /**
      * TestCustomFolding
@@ -183,6 +153,18 @@ public class Controller {
         plus40.setToggleGroup(group);
         route66.setToggleGroup(group);
         amiRibsAndChickenBreast.setToggleGroup(group);
+        CrispyPotatoButtonPlus10.setToggleGroup(group);
+        chilliDip.setToggleGroup(group);
+        smokeyBBQ.setToggleGroup(group);
+        aioli.setToggleGroup(group);
+        chipotleMayo.setToggleGroup(group);
+        bakedPotatoWSourButter.setToggleGroup(group);
+        bakedPotatoWSourCream.setToggleGroup(group);
+        bakedPotatoWSourGarlicButter.setToggleGroup(group);
+        CrispyPotatoButtonPlus10.setToggleGroup(group);
+        ChooseSoftIce.setToggleGroup(group);
+        showTotal.setToggleGroup(group);
+
 
 
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -190,64 +172,57 @@ public class Controller {
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
                 //RadioButton rb = (RadioButton)group.getSelectedToggle();
                 //  System.out.println(newValue);
+
+                prices.add(0);
                 if (newValue == spareRibs) {
                     prices.add(169);
-                } else if (newValue == origSparePlus20) {
+                }  if (newValue == origSparePlus20) {
                     prices.add(189);
-                    System.out.println("debug origSpare20+");
-                } else if (newValue == plus40) {
+
+                }  if (newValue == plus40) {
                     prices.add(209);
-                    totalPrice.setText("Debug plus40");
-                } else if (newValue == amiRibsAndChickenBreast) {
+
+                }  if (newValue == amiRibsAndChickenBreast) {
                     prices.add(185);
-                    totalPrice.setText("debug chickenBreat");
-                } else if (newValue == route66) {
+
+                }  if (newValue == route66) {
                     prices.add(205);
-                    totalPrice.setText("debug route 66");
+
+                }  if (newValue == chilliDip) {
+                    prices.add(6);
+
+                }  if (newValue == smokeyBBQ) {
+                    prices.add(6);
+
+                }  if (newValue == aioli) {
+                    prices.add(6);
+                }  if (newValue == chipotleMayo) {
+                    prices.add(6);
+                }  if (newValue == bakedPotatoWSourButter) {
+                    prices.add(10);
+                }  if (newValue == bakedPotatoWSourCream) {
+                    prices.add(10);
+                }  if (newValue == bakedPotatoWSourGarlicButter) {
+                    prices.add(10);
+                }  if (newValue == CrispyPotatoButtonPlus10 ) {
+                    prices.add(10);
                 }
+                if (newValue == ChooseSoftIce){
+                    prices.add(49);
+                }
+                if(newValue == showTotal){
+                    prices.add(0);
+                }
+
+
                 int price = 0;
-                for (int i = 0; i <prices.size()-1 ; i++) {
-
-
-                    price = prices.get(i)+price;
+                for (int i = 0; i < prices.size() - 1; i++) {
+                    price = prices.get(i) + price;
                 }
-                totalPrice.setText(""+price);
+                totalPrice.setText("" + price);
 
             }
         });
-
-
-
-
-/*
-        if(ChooseSoftIce.isFocused()){
-            prices.add(49);
-        }
-        if(chilliDip.isFocused()){
-            prices.add(6);
-        }
-        if(chipotleMayo.isFocused()){
-            prices.add(6);
-        }
-        if(smokeyBBQ.isFocused()){
-            prices.add(6);
-        }
-        if(aioli.isFocused()){
-            prices.add(6);
-        }
-        /*
-        if (origSparePlus20.isFocused())
-        {
-            prices.add(20);
-        }
-        if(CrispyPotatoButtonPlus10.isFocused())
-        {
-            prices.add(10);
-            totalPrice.setText("" + prices.get(1));
-        }
-  */
-
-
     }
 }
 
